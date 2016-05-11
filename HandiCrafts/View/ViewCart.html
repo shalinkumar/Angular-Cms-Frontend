@@ -1,0 +1,292 @@
+﻿<div id="viewCart">
+    <h1 class="page_headers"></h1>
+    <div class="desctag">
+        <div class="checkout">
+            <md-button ng-href="#/View/Listing" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                <span class="ng-scope">Continue Shopping</span>                  
+                <div class="md-ripple-container" style=""></div>
+            </md-button>
+
+            <md-button ng-href="#/View/CheckOut" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                    <span class="ng-scope">Checkout</span>                  
+                      <div class="md-ripple-container" style=""></div>
+           </md-button>
+        </div>
+    </div>
+    <form action="shipquote.asp" method="post" name="shipquote" onsubmit="return submitForm();">
+        <input type="hidden" name="thispage" value="" />
+        <input type="hidden" name="shipping_zip" value="[shipping_zip]" />
+        <script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
+    </form>
+    <form action="recalculate.asp" method="post" name="recalculate" id="recalculate" class="form-horizontal">
+        <div id="divCart">
+            <div class="shoppingCartItems table-responsive" id="divshoppingCartItems">
+
+                <table class="table-condensed borders">
+                    <tr class="titles2">
+                        <td class="item-info" colspan="2">ITEMS</td>
+                        <td class="item-qty">QTY</td>
+                        <td class="item-price">PRICE</td>
+                        <td class="item-total">TOTAL</td>
+                        <td class="item-remove">&nbsp;</td>
+                        <td class="clear"></td>
+                    </tr>
+                    <tr class="">
+                        <td class="product-image">
+                            <a href="http://www.klassykeys.com/045HD_p_1259.html">
+                                <img src="img/handicraftThree.jpg" class="img-responsive" />
+                            </a>
+                        </td>
+                        <td class="product-name-options">
+                            <md-button class="md-primary" ng-href="">045HD</md-button>
+                        </td>
+                        <td class="item-qty">
+                            <input type="text" name="qty0" value="1" size="3" maxlength="5" class="txtBoxStyle" />
+                            <input type="hidden" name="colid0" value="4709" size="3" maxlength="5" />
+                            <md-button class="md-primary" ng-href="">Update Cart</md-button>
+                        </td>
+                        <td class="item-price">$719.00</td>
+                        <td class="item-total">$719.00</td>
+                        <td class="Clear"></td>
+                        <td align="center">
+                            <md-button ng-href="" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                                <span class="ng-scope">X</span>                  
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="shoppingCartTotal TotalSubtotal">
+                    <div class="clear">&nbsp;</div>
+                    <div class="item-price">Subtotal: $719.00</div>
+                    <div class="clear">&nbsp;</div>
+                    <div class="item-price"><strong>TOTAL</strong>: <strong>$719.00</strong></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                <div class="applyCoupon pad10 boxShadow">
+                    <div class="header">
+                        <h5 class="checkout-headers">Apply Coupon</h5>
+                    </div>
+                    <div>
+                        <span class="col-sm-6">
+                            <md-input-container>                                                                                                          
+                                <input ng-model="user.email" type="email" placeholder="Promotion Code" ng-required="true">
+                            </md-input-container>
+                        </span>
+                        <md-button ng-href="" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                            <span class="ng-scope">Apply</span>                  
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--END: apply_coupon-->
+            <!--START: ShipQuote-->
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+                <div class="shipQuote pad10 boxShadow">
+                    <div class="header">
+                        <h5 class="checkout-headers">Calculate Shipping</h5>
+                    </div>
+
+                    <div class="shipquote-location">
+                        <div class="col-sm-6">
+                            <md-input-container>                                                                                
+                                <input ng-model="user.Zip" type="Zip" placeholder="Zip code" ng-required="true">
+                            </md-input-container>
+                        </div>
+                        <md-button ng-href="" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                            <span class="ng-scope">Calculate</span>                  
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--START: ShipQuoteInternational-->
+        <!--END: ShipQuoteInternational-->
+        <div class="clear"></div>
+
+        <div class="chk-buttons desctag">
+            <div class="checkout">
+
+                <md-button ng-href="#/View/Listing" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                        <span class="ng-scope">Continue Shopping</span>                  
+                        <div class="md-ripple-container" style=""></div>
+                    </md-button>
+
+                <md-button ng-href="#/View/CheckOut" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">                    
+                    <span class="ng-scope">Checkout</span>                  
+                    <div class="md-ripple-container" style=""></div>
+                </md-button>
+
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <fieldset class="third-party-payment">
+            <h5>Or Checkout with:</h5>
+            <div id="thirdPartyPayment">
+
+                <div class="ppale-button col-sm-4">
+                    <a href="http://www.klassykeys.com/paypal_express.asp?ch=1" title="Check out with PayPal">
+                        <img class="img-responsive" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-small.png" alt="Check out with PayPal" />
+                    </a>
+                </div>
+
+            </div>
+        </fieldset>
+        <div class="clear"></div>
+    </form>
+    <script type="text/javascript">
+        //You should create the validator only after the definition of the HTML form
+        var frmvalidator = new Validator("recalculate");
+
+        frmvalidator.setAddnlValidationFunction("submitForm");
+
+        //<!--START: apply_coupon_validation-->
+        frmvalidator.addValidation("coupon_code", "maxlen=20", "Maximun Coupon Length is 20");
+        //<!--END: apply_coupon_validation-->
+    </script>
+    <!--START: PROMOTIONS-->
+    <!--END: PROMOTIONS-->
+    <!--START: GIFTCERTIFICATES-->
+    <!--END: GIFTCERTIFICATES-->
+    <!--START: FEATURE_MENU-->
+    <!--END: FEATURE_MENU-->
+    <div class="clear"></div>
+    <!--START: CATEGORY_FOOTER-->
+    <!--END: CATEGORY_FOOTER-->
+
+
+    <script type="text/javascript">
+        //Show/Hide 3rd Party Payment Options section.
+        jQuery(function () {
+            if (jQuery('#thirdPartyPayment').has('div').length == 0) {
+                jQuery('.third-party-payment').hide();
+            }
+            else {
+                jQuery('.third-party-payment').show();
+            }
+        });
+    </script>
+
+    <!--START: GIFTWRAP_OPTIONS-->
+    <div id="divGiftWrap col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <form method="post" name="frmGiftWrap" id="frmGiftWrap">
+            <div class="header">
+                <h5>Gift Wrapping Options</h5>
+                <div class="clear"></div>
+            </div>
+       
+                <label class="control-label col-sm-5" for="giftwrap_id">Search Gift Wrapping:</label>
+                <div class="col-sm-12">
+                    <!--  <md-content class="md-padding">                        
+                              <form ng-submit="$event.preventDefault()">                    
+                                  <md-autocomplete
+                                      ng-disabled="DemoCtrl.isDisabled"
+                                      md-no-cache="DemoCtrl.noCache"
+                                      md-selected-item="DemoCtrl.selectedItem"
+                                      md-search-text-change="DemoCtrl.searchTextChange(DemoCtrl.searchText)"
+                                      md-search-text="DemoCtrl.searchText"
+                                      md-selected-item-change="DemoCtrl.selectedItemChange(item)"
+                                      md-items="item in DemoCtrl.querySearch(DemoCtrl.searchText)"
+                                      md-item-text="item.display"
+                                      md-min-length="0"
+                                      md-floating-label="Tap">
+                                      <md-item-template>
+                                          <span md-highlight-text="DemoCtrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                                      </md-item-template>
+                                      <md-not-found>
+                                          No matches found for "{{DemoCtrl.searchText}}".
+                                      </md-not-found>
+                                  </md-autocomplete>                                         
+                              </form>
+                          </md-content>-->
+                    <md-content class="md-padding">                        
+                        <form ng-submit="$event.preventDefault()">                           
+                            <md-autocomplete
+                                ng-disabled="DemoCtrl.isDisabled"
+                                md-no-cache="DemoCtrl.noCache"
+                                md-selected-item="DemoCtrl.selectedItem"
+                                md-search-text-change="DemoCtrl.searchTextChange(ctrl.searchText)"
+                                md-search-text="DemoCtrl.searchText"
+                                md-selected-item-change="DemoCtrl.selectedItemChange(item)"
+                                md-items="item in DemoCtrl.querySearch(ctrl.searchText)"
+                                md-item-text="item.display"
+                                md-min-length="0"
+                                placeholder="What is your favorite gift?">
+                                <md-item-template>
+                                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                    No states matching "{{ctrl.searchText}}" were found.
+                                    <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+                                </md-not-found>
+                            </md-autocomplete>
+                            <br/>
+                            <!--<md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>
+                            <md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>
+                            <md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>-->
+                        </form>
+                    </md-content>
+                </div>
+         
+
+        
+                <div class="col-sm-12">
+                    <div id="divGiftwrapItem">
+                        <div class="gw-image">
+                            <img src="thumbnail.asp?file=" class="img-responsive" />
+                        </div>
+                    </div>
+                    <div id="divGiftwrapMsg">
+                        <div class="form-group">
+                            <label class="control-label col-sm-5" for="giftwrap_message">Giftcard Message:</label>
+                        </div>
+                        <div >
+                            <textarea ng-model="string"></textarea>
+                        </div>
+
+                        <div class="chars-left">
+                            <p id="spnChars" class="charleft">
+                                <!--START: giftwrapcount-->
+                                400<!--END: giftwrapcount-->
+                                &nbsp;Characters left
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+          
+           
+                <div class="col-sm-12">
+                    <div class="desctag">
+                        <div class="checkout">
+                            <md-button ng-href="" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">                        
+                                <span class="ng-scope">Cancel</span>                  
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+
+                            <md-button ng-href="" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">                        
+                                <span class="ng-scope">Add Giftwrap</span>                  
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+
+                        </div>
+                    </div>
+                </div>
+         
+
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,411 @@
+﻿<div id="CreateAccount" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <h5>{{header}}</h5>
+    <div class="col-md-12 md-padding">
+        <div class="row">
+            <form class="form-horizontal" novalidate role="form" name="Signup_Form_Customer_Info" ng-submit="signupform(Signup_Form_Customer_Info)"  data-ng-controller="RegisterController">
+                <div class="myacunt">
+                    <p><strong>{{title}}</strong></p>
+                </div>
+                <div class="form-group">                  
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_email" email-available ng-model-options="{ updateOn: 'blur' }" ng-model="shipping_email" required type="email" placeholder="Email" ng-minlength=10 ng-maxlength=30 ng-pattern="" tabindex="1" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div ng-if="Signup_Form_Customer_Info.$pending.emailExists">checking....</div>
+                        <div ng-if="Signup_Form_Customer_Info.$error.emailExists">Email exists already</div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_email.$invalid">
+                            <small ng-show="Signup_Form_Customer_Info.shipping_email.$error.required">
+                                *
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_email.$error.minlength">
+                                Email is required to be at laeast 10 characters.
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_email.$error.maxlength">
+                                Email cannot be longer than 30 characters.
+                            </small>
+
+                            <small ng-show="Signup_Form_Customer_Info.shipping_email.$error.unique">
+                                Email is already registered
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_email.$invalid">
+                            <small ng-show="Signup_Form_Customer_Info.shipping_email.$error.pattern">
+                                Not a valid email.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_UserName" username-available ng-model-options="{ updateOn: 'blur' }" ng-model="shipping_UserName" required type="text" placeholder="UserName" ng-minlength="5" ng-maxlength="15" ng-pattern="" tabindex="2"/>
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div ng-if="Signup_Form_Customer_Info.$pending.usernameExists">checking...</div>
+                        <div ng-if="Signup_Form_Customer_Info.$error.usernameExists">User name exists already</div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_UserName.$invalid">
+                            <small ng-show="Signup_Form_Customer_Info.shipping_UserName.$error.required">
+                                *
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_UserName.$error.minlength">
+                                User name is required to be at least 5 character.
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_UserName.$error.maxlength">
+                                User name cannot be longer than 15 characters.
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_UserName.$error.unique">
+                                User name is already registered.
+                            </small>
+                        </div>
+
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_UserName.$invalid">
+                            <small ng-show="Signup_Form_Customer_Info.shipping_UserName.$error.pattern">
+                                Not a valid email.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_password" ng-model="shipping_password" required type="password" ng-minlength=5 ng-maxlength=20 tabindex="3" placeholder="Password" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_password.$invalid">
+                            <small ng-show="Signup_Form_Customer_Info.shipping_password.$error.required">
+                                *
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_password.$error.minlength">
+                                Password is required to be at least 5 characters.
+                            </small>
+                            <small ng-show="Signup_Form_Customer_Info.shipping_password.$error.maxlength">
+                                Password cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_firstname" ng-model="shipping_firstname" required type="text" placeholder="First Name" ng-minlength=3 ng-maxlength=20 ng-pattern="" tabindex="4" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_firstname.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_firstname.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_firstname.$error.minlength">
+                                First name is required to be at laeast 3 characters.
+                            </small>
+
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_firstname.$error.maxlength">
+                                First name cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_firstname.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_firstname.$error.pattern">
+                                Not a valid First name.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_lastname" ng-model="shipping_lastname" required placeholder="Last Name" type="text" ng-minlength=3 ng-maxlength=20 ng-pattern="" tabindex="5" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_lastname.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_lastname.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_lastname.$error.minlength">
+                                Last name is required to be at laeast 3 characters.
+                            </small>
+
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_lastname.$error.maxlength">
+                                Last name cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_lastname.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_lastname.$error.pattern">
+                                Not a valid last name.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_company" ng-model="shipping_company" placeholder="Company" required type="text" ng-minlength=5 ng-maxlength=200 tabindex="6" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_company.$invalid">
+
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_company.$error.minlength">
+                                Company is required to be at laeast 3 characters.
+                            </small>
+
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_company.$error.maxlength">
+                                Company cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_company.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_company.$error.pattern">
+                                Not a valid company.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="tax_id" ng-model="tax_id" required type="text" placeholder="Tax ID" ng-maxlength=20 ng-pattern="" tabindex="7" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.tax_id.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.tax_id.$error.maxlength">
+                                Tax id cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.tax_id.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.tax_id.$error.pattern">
+                                Not a valid tax id.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_phone" ng-model="shipping_phone" required type="text" placeholder="Phone" ng-maxlength=18 ng-pattern="" tabindex="8" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_phone.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_phone.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_phone.$error.maxlength">
+                                Phone cannot be longer than 18 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_phone.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_phone.$error.pattern">
+                                Not a valid Phone.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_address" ng-model="shipping_address" required type="text" placeholder="Address" ng-maxlength=50 tabindex="9" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_address.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_address.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_address.$error.maxlength">
+                                Address cannot be longer than 50 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_address.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_address.$error.pattern">
+                                Not a valid Address.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_address2" ng-model="shipping_address2" required type="text" placeholder="Suite / Apt #" ng-maxlength=50 tabindex="10" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_address2.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_address2.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_address2.$error.maxlength">
+                                Suite / Apt # cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_address2.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_address2.$error.pattern">
+                                Not a valid Suite / Apt #.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_city" ng-model="shipping_city" required type="text" placeholder="City" ng-minlength=3 ng-maxlength=50 ng-pattern="" tabindex="11" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_city.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_city.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_city.$error.minlength">
+                                City is required to be at laeast 3 characters.
+                            </small>
+
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_city.$error.maxlength">
+                                City cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_city.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_city.$error.pattern">
+                                Not a valid City.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9 md-padding selectdemoOptionGroups">
+                        <div layout="row">
+                            <md-input-container style="margin-right: 10px;">
+                                <label>Country</label>
+                                <md-select required name="shipping_country" ng-model="shipping_country" placeholder="Select Country">
+                                    <md-option ng-repeat="shipping_country in countries" value="{{shipping_country}}">{{shipping_country}}</md-option>
+                                </md-select>
+                                <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_country.$invalid">
+                                    <small class="error" ng-show="Signup_Form_Customer_Info.shipping_country.$error.required">
+                                        *
+                                    </small>
+                                </div>
+                            </md-input-container>
+
+                            <md-input-container>
+                                <label>State</label>
+                                <md-select required name="shipping_state" ng-model="shipping_state" placeholder="Select State">
+                                    <md-option ng-repeat="shipping_state in states" value="{{shipping_state}}">{{shipping_state}}</md-option>
+                                </md-select>
+
+                                <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_state.$invalid">
+                                    <small class="error" ng-show="Signup_Form_Customer_Info.shipping_state.$error.required">
+                                        *
+                                    </small>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_zip" ng-model="shipping_zip" placeholder="Zip" required type="text" ng-minlength=5 ng-maxlength=20 ng-pattern="/^[0-9]+$/" tabindex="12" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_zip.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_zip.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_zip.$error.minlength">
+                                Zip is required to be at laeast 5 characters..!!
+                            </small>
+
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_zip.$error.maxlength">
+                                Zip cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_zip.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_zip.$error.pattern">
+                                Not a valid Zip.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <label>Comments</label>
+                            <textarea name="Comments" ng-model="Comments" required md-maxlength="150" tabindex="13"></textarea>
+                            <!--<div ng-show="Signup_Form_Customer_Info.Comments.$error" >
+                                <div ng-show="required">This is required!</div>
+                                <div ng-show="md-maxlength">That's too long!</div>
+                            </div>-->                       
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.Comments.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_zip.$error.maxlength">
+                                That's too long!
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="myacunt">
+                    <p><strong>Verification</strong></p>
+                </div>
+
+                <div class="form-group">
+                    <div class="captcha col-sm-offset-3 col-sm-9">
+                        <div id="recaptcha_image">
+                            <img src="admin/image_pw.asp" border="0" style="margin: 0;" class="img-responsive">
+                        </div>
+                        <label class="control-label col-sm-6" for="subject" style="text-align: left;">Type the word above…</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input name="shipping_randomWord" ng-model="shipping_randomWord" required type="text" placeholder="Verification Code" ng-maxlength=30 ng-pattern="/^[A-z0-9]+$/" tabindex="15" />
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_randomWord.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_randomWord.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_randomWord.$error.maxlength">
+                                Verification cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="Signup_Form_Customer_Info.shipping_randomWord.$invalid">
+                            <small class="error" ng-show="Signup_Form_Customer_Info.shipping_randomWord.$error.pattern">
+                                Not a valid verification.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">                      
+                        <md-button  ng-disabled="Signup_Form_Customer_Info.$invalid" type="submit" class="md-raised md-warn md-button md-ink-ripple">
+                            <span class="ng-scope">Proceed</span>
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+                     
+                    </div>
+                </div>
+
+                <span ng-show="errorName">{{errorName}}</span>
+                <span ng-show="errorUserName">{{errorUserName}}</span>
+                <span ng-show="errorEmail">{{errorEmail}}</span>
+            </form>
+        </div>
+    </div>
+</div>
+
+

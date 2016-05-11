@@ -1,0 +1,1 @@
+﻿define(['./PageDesignService', './DataServiceGet', './DataServicePost', './DataServiceLogin'], function () { });

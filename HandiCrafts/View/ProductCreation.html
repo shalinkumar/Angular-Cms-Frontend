@@ -1,0 +1,192 @@
+﻿<div id="ProductCreation" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active">Create new product</li>
+    </ul>
+    <h5>ProductCreation</h5>
+    <div class="col-md-12 md-padding">
+        <div class="row">
+            <form class="form-horizontal" novalidate role="form" name="ProductCreation_Form" ng-submit="ProductCreationForm()" data-ng-controller="ProductCreationController">
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input id="name" placeholder="ContentType" name="ProductCreation_ContentType" ng-model="ProductCreation_ContentType" ng-maxlength=30 required type="text" ng-pattern="" tabindex="2">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ContentType.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ContentType.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ContentType.$error.maxlength">
+                                ContentType cannot be longer than 30 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ContentType.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ContentType.$error.pattern">
+                                Not a valid contentType.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input id="name" placeholder="Title" name="ProductCreation_Title" ng-model="ProductCreation_Title" ng-minlength=5 ng-maxlength=20 required type="text" ng-pattern="" tabindex="2">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_Title.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Title.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Title.$error.minlength">
+                                Title is required to be at laeast 5 characters..!!
+                            </small>
+
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Title.$error.maxlength">
+                                Title cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_Title.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Title.$error.pattern">
+                                Not a valid title.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ProductCreation_Description" name="ProductCreation_Description" type="text" ng-maxlength=100 placeholder="Description" required tabindex="3">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_Description.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Description.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Description.$error.maxlength">
+                                Description cannot be longer than 100 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_Description.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_Description.$error.pattern">
+                                Not a valid description.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ProductCreation_ImageSrc" name="ProductCreation_ImageSrc" type="text" placeholder="ImageSrc" ng-maxlength=30 required tabindex="4">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ImageSrc.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ImageSrc.$error.required">
+                                *
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ProductCreation_ItamName" name="ProductCreation_ItamName" type="text" placeholder="ItamName" ng-minlength=5 ng-maxlength=30 required tabindex="4">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItamName.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItamName.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItamName.$error.minlength">
+                                ItamName is required to be at laeast 5 characters..!!
+                            </small>
+
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItamName.$error.maxlength">
+                                ItamName cannot be longer than 30 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItamName.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItamName.$error.pattern">
+                                Not a valid itamName.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ProductCreation_ItemCode" name="ProductCreation_ItemCode" type="text" placeholder="ItemCode" ng-minlength=5 ng-maxlength=30 required tabindex="4">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItemCode.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemCode.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemCode.$error.minlength">
+                                ItemCode is required to be at laeast 5 characters..!!
+                            </small>
+
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemCode.$error.maxlength">
+                                ItemCode cannot be longer than 30 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItemCode.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemCode.$error.pattern">
+                                Not a valid itemCode.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ProductCreation_ItemPrice" name="ProductCreation_ItemPrice" type="text" placeholder="ItemPrice" required tabindex="4">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItemPrice.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemPrice.$error.required">
+                                *
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItemPrice.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemPrice.$error.pattern">
+                                Not a valid itemPrice.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ProductCreation_ItemReview" name="ProductCreation_ItemReview" type="number" placeholder="ItemReview" required tabindex="4">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ProductCreation_Form.ProductCreation_ItemReview.$invalid">
+                            <small class="error" ng-show="ProductCreation_Form.ProductCreation_ItemReview.$error.required">
+                                *
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <md-button ng-disabled="ProductCreation_Form.$invalid" type="submit" class="md-raised md-warn md-button md-ink-ripple">
+                            <!--ng-href="#/View/HomePage"-->
+                            <span class="ng-scope">Submit Request</span>
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

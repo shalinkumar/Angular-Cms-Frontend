@@ -1,0 +1,42 @@
+﻿<md-toolbar class="mobile">
+    <div class="md-toolbar-tools" data-ng-show="showMobileMainHeader">
+        <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+            <md-tooltip>Open Side Panel</md-tooltip>
+            <md-icon class="md-default-theme material-icons">&#xE5D2;</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Icon">
+            <md-tooltip>Icon</md-tooltip>
+            <md-icon class="md-default-theme" md-svg-icon="fb.svg"></md-icon>
+        </md-button>
+        <h2>
+            <span>Heading</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Search" data-ng-click="showMobileMainHeader = false">
+            <md-tooltip>Search</md-tooltip>
+            <md-icon class="material-icons">&#xE8B6;</md-icon>
+        </md-button>
+        <md-button ng-href="#/View/Login" class="md-icon-button" aria-label="User">
+            <md-tooltip>User</md-tooltip>
+            <img src="../img/user.png" style="width:24px;height:24px;margin-top: 13px;" />
+        </md-button>
+        <md-button ng-href="#/View/AngContact" class="md-icon-button" aria-label="Messages">
+            <md-tooltip>Messages</md-tooltip>
+            <img class="ng-scope" src="../img/ic_contacts_white_48pt_3x.png" style="width:24px;height:24px;margin-top: 13px;" />
+        </md-button>
+    </div>
+    <div class="md-toolbar-tools" data-ng-hide="showMobileMainHeader">
+        <md-button class="md-icon-button" aria-label="Back" data-ng-click="showMobileMainHeader = true">
+            <md-tooltip>Back</md-tooltip>
+            <md-icon class="material-icons">&#xE5C4;</md-icon>
+        </md-button>
+        <md-input-container md-no-float class="md-accent" style="padding-bottom:0px;">
+            <input ng-model="searchInput" placeholder="Search here" style="color:wheat;">
+        </md-input-container>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Search">
+            <md-tooltip>Search</md-tooltip>
+            <md-icon class="material-icons">&#xE163;</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>

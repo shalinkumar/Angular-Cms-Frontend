@@ -1,0 +1,110 @@
+﻿<div class="col-sm-4">
+    <div class="panel-group" id="accordion">
+        <!--Top Sellers-->
+        <div class="panel panel-default titletag">
+            <div ng-click="toggleTopSell()" class="panel-heading" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseFive">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" style="display: block" href="javascript:void(0);" data-target="#collapseFive">
+                        Top Sellers
+                        <i ng-class="TopSellclass"></i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse in" ng-hide="TopSell">
+                <div class="panel-body">
+                    <div class="topsell">
+                        <a href="#/Templates/Listing">
+                            <img class="img-responsive" src="../img/handicraftThree.jpg" alt="">
+                        </a>
+                        <p><a href="">501- AMERICAN FLAG</a></p>
+                        <div class="stars">
+                            <img src="../img/star0.png" class="img-responsive" alt="">
+                            <span>0 Review(s)</span>
+                        </div>
+
+                        <md-button ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                            <span class="ng-scope">Add to Cart</span>
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+                    </div>
+                    <div class="topsellbot">
+                        <a href="#/Templates/Listing">
+                            <img class="img-responsive" src="../img/handicraftThree.jpg" alt="">
+                        </a>
+                        <div class="sellone">
+                            <p><a href="">545- CAMOUFLAGE</a></p>
+                            <div class="stars">
+                                <img src="../img/star0.png" class="img-responsive" alt="">
+                            </div>
+                            <md-button ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                                <span class="ng-scope">More Details</span>
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+                        </div>
+                    </div>
+                    <div class="topsellbot">
+                        <a href="#/Templates/Listing">
+                            <img class="img-responsive" src="../img/handicraftThree.jpg" alt="">
+                        </a>
+                        <div class="sellone">
+                            <p><a href="">502- RAINBOW ZEBRA</a></p>
+                            <div class="stars">
+                                <img src="../img/star0.png" class="img-responsive" alt="">
+                            </div>
+                            <md-button ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                                <span class="ng-scope">More Details</span>
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--New Releases-->
+        <div class="panel panel-default titletag">
+            <div ng-click="toggleNewRelease()" class="panel-heading" data-toggle="collapse" data-parent="#accordion2" data-target="#collapseSix">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" style="display: block" href="javascript:void(0);" data-target="#collapseSix">
+                        New Releases
+                        <i ng-class="classNewRelease"></i>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse in" ng-hide="NewRelease">
+                <div class="panel-body">
+                    <div class="topsellbot">
+                        <a href="#/Templates/Listing">
+                            <img class="img-responsive" src="../img/handicraftThree.jpg" alt="">
+                        </a>
+                        <div class="sellone">
+                            <p><a href="">9662-Pink Icon House Key</a></p>
+                            <div class="stars">
+                                <img src="../img/star0.png" class="img-responsive" alt="">
+                            </div>
+                            <md-button ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                                <span class="ng-scope">More Details</span>
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+                        </div>
+                    </div>
+                    <div class="topsellbot">
+                        <a href="#/Templates/Listing">
+                            <img class="img-responsive" src="../img/handicraftThree.jpg" alt="">
+                        </a>
+                        <div class="sellone">
+                            <p><a href="">502- RAINBOW ZEBRA</a></p>
+                            <div class="stars">
+                                <img src="../img/star0.png" class="img-responsive" alt="">
+                            </div>
+                            <md-button ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                                <span class="ng-scope">More Details</span>
+                                <div class="md-ripple-container" style=""></div>
+                            </md-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

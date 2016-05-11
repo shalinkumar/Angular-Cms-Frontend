@@ -1,0 +1,576 @@
+﻿<div id="CheckOut" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+
+    <div id="billing_div">
+
+        <div id="divCart">
+            <div>
+                <h5>Checkout</h5>
+            </div>
+            <!--START: SHOPPING_CART_TEMP-->
+            <div class="table-responsive">
+                <table class="table-condensed">
+
+                    <tr>
+                        <td colspan="2"><strong>ITEMS</strong></td>
+                        <td><strong>QTY</strong></td>
+                        <td><strong>PRICE</strong></td>
+                        <td><strong>TOTAL</strong></td>
+                    </tr>
+                    <!--START: SHOPPING_CART_ITEM-->
+                    <tr>
+                        <td>
+                            <!--START: itemthumbnail-->
+                            <a href="">
+                                <img src="../img/handicraftThree.jpg" border="0" height="55" width="55" id="tl"></a><!--END: itemthumbnail-->
+
+                        </td>
+                        <td class="item">
+                            <md-button class="md-primary" ng-href="">045HD</md-button>
+                        </td>
+                        <td class="item">3
+                            <input type="hidden" name="colid0" value="4712" size="3" maxlength="5" id="Hidden3" />
+                        </td>
+                        <td class="item">$719.00</td>
+                        <td class="item">$2,157.00</td>
+                    </tr>
+                    <!--END: SHOPPING_CART_ITEM-->
+                </table>
+            </div>
+            <!--END: SHOPPING_CART_TEMP-->
+        </div>
+
+        <!--START: account_login1-->
+        <div class="myacuntform">
+            <div class="desctag">
+                <p>If you have registered with us before, sign in now to save time during checkout. Signing in is optional. You can check out without signing in.</p>
+                <div style="float: left;">
+
+                    <md-button ng-href="#/View/Account" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                            <span class="ng-scope">Log in to your account</span>                  
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+                    <!--                            <input type="button" value="Log in to your account" name="B3" onclick="document.location = 'checkout.asp?step=log-in';" class="btn btn-default createacc" />-->
+                </div>
+
+            </div>
+        </div>
+        <!--END: account_login1-->
+
+        <div class="col-md-12">
+              <div class="row">
+            <!-- start left bar-->
+            <div class="col-sm-6">
+
+          
+                    <div class="myacunt">
+                        <h5>Billing Information</h5>
+                    </div>
+                    <!--START: SAVE_ADDRESSES-->
+                    <!--END: SAVE_ADDRESSES-->
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.firstname" type="Zips" placeholder="First Name" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <md-input-container>                                                                                
+                                <input ng-model="billing.lastname" type="Zip" placeholder="Last Name" ng-required="true">
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing._company" type="Zip" placeholder="Company" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.Phone" type="Zip" placeholder="Phone" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.Address" type="Zip" placeholder="Address" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.SuiteApt" type="Zip" placeholder="Suite / Apt #" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.City" type="Zip" placeholder="City" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.Country" type="Zip" placeholder="Country" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-content class="md-padding">                        
+                            <form ng-submit="$event.preventDefault()">                           
+                                <md-autocomplete
+                                    ng-disabled="DemoCtrl.isDisabled"
+                                    md-no-cache="DemoCtrl.noCache"
+                                    md-selected-item="DemoCtrl.selectedItem"
+                                    md-search-text-change="DemoCtrl.searchTextChange(ctrl.searchText)"
+                                    md-search-text="DemoCtrl.searchText"
+                                    md-selected-item-change="DemoCtrl.selectedItemChange(item)"
+                                    md-items="item in DemoCtrl.querySearch(ctrl.searchText)"
+                                    md-item-text="item.display"
+                                    md-min-length="0"
+                                    placeholder="State">
+                                    <md-item-template>
+                                        <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                                    </md-item-template>
+                                    <md-not-found>
+                                        No states matching "{{ctrl.searchText}}" were found.
+                                        <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+                                    </md-not-found>
+                                </md-autocomplete>
+                                <br/>
+                                <!--<md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>
+                                    <md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>
+                                    <md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>-->
+                            </form>
+                        </md-content>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.Zip" type="Zip" placeholder="Zip" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="billing.Email" type="Zip" placeholder="Email" ng-required="true">
+                        </md-input-container>
+                    </div>
+
+                <div class="form-group">                       
+                    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">                                
+                         Like to be notified of product updates.
+                    </md-checkbox>                      
+                </div>
+                    <div class="form-group">
+                        <md-checkbox ng-model="data.sameAsBilling" aria-label="Checkbox 2">                                                        
+                            Same as Billing. {{ data.sameAsBilling }}
+                        </md-checkbox>
+                    </div>
+                    <!--START: account_login2-->
+            
+            </div>
+
+            <div class="col-sm-6">
+            
+                    <div class="myacunt">
+                        <h5>Shipping Information</h5>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.firstname" type="Zip" placeholder="First Name" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.LastName" type="Zip" placeholder="Last Name" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.Company" type="Zip" placeholder="Company" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.Phone" type="Zip" placeholder="Phone" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.Address" type="Zip" placeholder="Address" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.SuiteApt" type="Zip" placeholder="Suite / Apt #" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.City" type="Zip" placeholder="City" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.Country" type="Zip" placeholder="Country" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.State" type="Zip" placeholder="State" ng-required="true">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <md-input-container>                                                                                
+                            <input ng-model="shipping.Zip" type="Zip" placeholder="Zip" ng-required="true">
+                        </md-input-container>
+                    </div>
+
+             
+                <div>
+                    <div class="header">
+                        <h5>Shipping Method</h5>
+                    </div>
+                    <!--START: echoFreightOptions-->
+                    <div id="div1" style="display: none;">
+                        <!--START: echoFreightRegularMsg-->
+                        <div class="header">
+                            <strong>LTL Shipping options:</strong> the radio buttons below (by default) quote LTL shipping to Residential, Limited Access and truck with Lift Gate Required.
+                        </div>
+                        <ol>
+                            <li>Adjust these buttons for your shipping location.</li>
+                            <li>Then click "Refresh Rates" below, and your new cost will show in Shipping (in the Order Total to the right).</li>
+                        </ol>
+
+                        <div class="echo-group1">
+                            <div class="echo-option">
+                                <input type="radio" name="echoFreightOptions" id="Radio1" onclick=" document.getElementById('echoFreightOptionsRes1').checked = false; document.getElementById('echoFreightOptionsRes2').checked = false; " value="22" />
+                                Business
+                            </div>
+                            <div class="echo-option2">
+                                <input type="checkbox" name="echoFreightOptions" id="Checkbox1" onclick=" document.getElementById('echoFreightOptionsBus').checked = true; document.getElementById('echoFreightOptionsRes').checked = false; document.getElementById('echoFreightOptionsRes1').checked = false; document.getElementById('echoFreightOptionsRes2').checked = false; " value="21" />
+                                Lift Gate required
+                            </div>
+                            <div class="echo-option2">
+                                <input type="checkbox" name="echoFreightOptions" id="Checkbox2" onclick=" document.getElementById('echoFreightOptionsBus').checked = true; document.getElementById('echoFreightOptionsRes').checked = false; document.getElementById('echoFreightOptionsRes1').checked = false; document.getElementById('echoFreightOptionsRes2').checked = false; check_address('refresh'); " value="7" />
+                                The driver needs to deliver inside
+                            </div>
+                        </div>
+                        <div class="echo-group2">
+                            <div class="echo-option">
+                                <input type="radio" checked name="echoFreightOptions" id="Radio2" onclick=" document.getElementById('echoFreightOptionsBus1').checked = false; document.getElementById('echoFreightOptionsBus2').checked = false; " value="18" />
+                                Residential
+                            </div>
+                            <div class="echo-option2">
+                                <input type="checkbox" checked name="echoFreightOptions" id="Checkbox3" onclick=" document.getElementById('echoFreightOptionsRes').checked = true; document.getElementById('echoFreightOptionsBus').checked = false; document.getElementById('echoFreightOptionsBus1').checked = false; document.getElementById('echoFreightOptionsBus2').checked = false; " value="21" />
+                                Lift Gate required
+                            </div>
+                            <div class="echo-option2">
+                                <input type="checkbox" name="echoFreightOptions" id="Checkbox4" onclick=" document.getElementById('echoFreightOptionsRes').checked = true; document.getElementById('echoFreightOptionsBus').checked = false; document.getElementById('echoFreightOptionsBus1').checked = false; document.getElementById('echoFreightOptionsBus2').checked = false; check_address('refresh'); " value="7" />
+                                The driver needs to deliver inside
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: echoFreightOptions-->
+                    <div id="shipping_div" class="pad10 boxShadow">
+                        <div id="shipResult">
+                            <p>Shipping Method will come here</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="header">
+                        <h5>Order Total</h5>
+                    </div>
+                    <div id="Div4" name="total_div">
+                        <p>Order Total will come here. based on the appropriate shipping method to display the order total</p>
+                    </div>
+                </div>
+            </div>
+            <!-- end right bar-->
+   </div>
+        </div>
+        <div id="divPayment">
+            <!--START: PAYMENT_BLOCK-->
+            <div class="header">
+                <h5>Choose one payment method</h5>
+            </div>
+            <!--START: NO_PAYMENT_BLOCK-->
+            <!--END: NO_PAYMENT_BLOCK-->
+            <div id="divPaymentMethods">
+
+                <!--START: PPEXPRESS-->
+                <div class="ppExpress">
+                    <p><strong>Check out with PayPal</strong></p>
+                    <!--  <div class="radio">
+                          </div>-->
+                    <div class="ppe-logo">
+                        <md-radio-group ng-model="data.group1">
+                            <md-radio-button value="Apple" class="md-primary">
+                                <a href="javascript:document.getElementById('online-[id]-ppe').click();">
+                                    <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" /></a>
+                            </md-radio-button>                                                               
+                            <md-radio-button value="PayPalPaymentsPro"> PayPal Payments Pro </md-radio-button>    
+                        </md-radio-group>
+                    </div>
+                </div>
+                <!--END: PPEXPRESS-->
+
+                <!--START: CCGATEWAY-->
+                <form style="display: none" class="form-horizontal" role="form">
+
+                    <div id="divPaymentOption4" name="divPaymentOption">
+                        <!--<div id="divPaymentOption4" name="divPaymentOption" style="display:none;">-->
+
+                        <div class="form-group">
+                            <md-input-container>                                                                                                                                          
+                                <input ng-model="divPaymentOption.CreditCardNumber" type="email" placeholder="Credit Card Number" ng-required="true">
+                            </md-input-container>
+                        </div>
+                        <!--START: ccStartDate-->
+                        <!--END: ccStartDate-->
+                        <div class="ccgField form-group">
+                            <label class="control-label" for="creditexpiration">Expiration*</label>
+
+                            <select name="ff4_ocardexpiresmonth" class="txtBoxStyle form-control">
+                                <option value='01'>01</option>
+                                <option value='02'>02</option>
+                                <option value='03'>03</option>
+                                <option value='04'>04</option>
+                                <option value='05'>05</option>
+                                <option value='06'>06</option>
+                                <option value='07'>07</option>
+                                <option value='08'>08</option>
+                                <option value='09'>09</option>
+                                <option value='10'>10</option>
+                                <option value='11'>11</option>
+                                <option value='12'>12</option>
+                            </select>
+
+
+                            <select name="ff4_ocardexpiresyear" class="txtBoxStyle form-control">
+                                <option value='2015'>2015</option>
+                                <option value='2016'>2016</option>
+                                <option value='2017'>2017</option>
+                                <option value='2018'>2018</option>
+                                <option value='2019'>2019</option>
+                                <option value='2020'>2020</option>
+                                <option value='2021'>2021</option>
+                                <option value='2022'>2022</option>
+                                <option value='2023'>2023</option>
+                                <option value='2024'>2024</option>
+                                <option value='2025'>2025</option>
+                                <option value='2026'>2026</option>
+                                <option value='2027'>2027</option>
+                                <option value='2028'>2028</option>
+                                <option value='2029'>2029</option>
+                                <option value='2030'>2030</option>
+                                <option value='2031'>2031</option>
+                                <option value='2032'>2032</option>
+                                <option value='2033'>2033</option>
+                                <option value='2034'>2034</option>
+                                <option value='2035'>2035</option>
+                                <option value='2036'>2036</option>
+                                <option value='2037'>2037</option>
+                                <option value='2038'>2038</option>
+                                <option value='2039'>2039</option>
+                                <option value='2040'>2040</option>
+                            </select>
+
+
+                        </div>
+                        <div class="form-group">
+                            <!--<select name="ff4_ocardtype" class="txtBoxStyle form-control">
+                                    <option value="Visa">Visa</option>
+                                    <option value="Mastercard">Mastercard</option>
+                                </select>-->
+                            <md-content class="md-padding">                        
+                        <form ng-submit="$event.preventDefault()">                           
+                            <md-autocomplete
+                                ng-disabled="DemoCtrl.isDisabled"
+                                md-no-cache="DemoCtrl.noCache"
+                                md-selected-item="DemoCtrl.selectedItem"
+                                md-search-text-change="DemoCtrl.searchTextChange(ctrl.searchText)"
+                                md-search-text="DemoCtrl.searchText"
+                                md-selected-item-change="DemoCtrl.selectedItemChange(item)"
+                                md-items="item in DemoCtrl.querySearch(ctrl.searchText)"
+                                md-item-text="item.display"
+                                md-min-length="0"
+                                placeholder="Card Type">
+                                <md-item-template>
+                                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                    No states matching "{{ctrl.searchText}}" were found.
+                                    <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+                                </md-not-found>
+                            </md-autocomplete>
+                            <br/>
+                            <!--<md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>
+                            <md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>
+                            <md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>-->
+                        </form>
+                    </md-content>
+
+                        </div>
+
+                        <div class="form-group">
+                            <md-input-container>                                                                                                                                          
+                                <input ng-model="divPaymentOption.CVV2" type="email" placeholder="CVV2" ng-required="true">
+                            </md-input-container>
+                            <a href="#" onclick=" javascript:window.open('assets/templates/common/images/cvv2.gif', 'new', 'menubars=no, resizable=no, statusbar=no, titlebar=no, width=300, height=500'); " class="cvv2-help">What's this?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="divCheckoutComments">
+            <div class="header">
+                <h5>Comments</h5>
+            </div>
+            <div class="form-group">
+                <p>Please provide us with any additional information which may help complete your order.</p>
+                <textarea ng-model="string"></textarea>
+                <div class="clear"></div>
+            </div>
+
+            <div id="spanCheckout" class="desctag">
+                <div id="divCheckout" name="divCheckout" style="background: #ffffff; border: 0px solid black; display: none; padding: 10px; text-align: center; width: 80%;">
+                    <br />
+                    Processing...
+                </div>
+
+
+                <md-button ng-href="#/View/ThankYou" ng-transclude="" type="button" class="md-raised md-warn md-button md-ink-ripple">
+                    <span class="ng-scope">Check out</span>                  
+                    <div class="md-ripple-container" style=""></div>
+                </md-button>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        window.setTimeout('showHideShipping_init()', 100);
+
+        function showHideShipping_init() {
+            var objBody = getElementById_s('shipping_info');
+            var intWidth = objBody.clientWidth;
+            if (intWidth == 0)
+                window.setTimeout('showHideShipping_init()', 100);
+            else
+                showHideShipping();
+        }
+
+        initCountry('US', '', 'billing_state', 'billing_country', '');
+        if (get_Element('sameAsBilling') != 'undefined' && get_Element('sameAsBilling') != null)
+            initCountry('US', '', 'shipping_state', 'shipping_country', '');
+
+        //Every time that there's no state for a selected country, that script deletes the state control and creates another one.
+        //That's why we need to re-create the validation for the state.
+        var billingStateType = document.billing.billing_state.type;
+        if (get_Element('sameAsBilling') != 'undefined' && get_Element('sameAsBilling') != null)
+            var shippingStateType = document.billing.shipping_state.type;
+
+        function check_stateValidator(type) {
+            if (type == 'billing') {
+                if (document.billing.billing_state.type == 'select-one') //billingStateType)
+                {
+
+                    frmvalidator.addValidation("billing_state", "req", "Please enter/select your billing state");
+                    frmvalidator.addValidation("billing_state", "maxlen=50");
+                    billingStateType = document.billing.billing_state.type;
+                }
+            } else {
+                if (document.billing.shipping_state.type == 'select-one') {
+                    frmvalidator.addValidation("shipping_state", "req", "Please enter/select your shipping state");
+                    frmvalidator.addValidation("shipping_state", "maxlen=50");
+                    shippingStateType = document.billing.shipping_state.type;
+                }
+            }
+        }
+
+        function setValidation() {
+            frmvalidator.clearAllValidations();
+
+            frmvalidator.addValidation("billing_firstname", "req", "Please enter your billing First Name");
+            frmvalidator.addValidation("billing_firstname", "maxlen=20", "Max length for billing First Name is 20");
+
+            frmvalidator.addValidation("billing_lastname", "req", "Please enter your billing Last Name");
+            frmvalidator.addValidation("billing_lastname", "maxlen=20", "Max length for billing Last Name is 20");
+
+            //<!--START: phonerequiredscript_billing-->
+            frmvalidator.addValidation("billing_phone", "maxlen=18", "Max length for billing Phone is 18");
+            if (get_Element('billing_country') != 'undefined' && get_Element('billing_country') != null)
+                if (get_Element('billing_country').value == "US")
+                    frmvalidator.addValidation("billing_phone", "phone", "Invalid phone number.");
+            frmvalidator.addValidation("billing_phone", "req", "Please enter your billing phone"); //<!--END: phonerequiredscript_billing-->
+
+            frmvalidator.addValidation("billing_address", "maxlen=50");
+            frmvalidator.addValidation("billing_address", "req", "Please enter your billing address");
+
+            frmvalidator.addValidation("billing_city", "maxlen=50");
+            frmvalidator.addValidation("billing_city", "req", "Please enter your billing city");
+
+            if (get_Element('billing_country').value == "US" || get_Element('billing_state').type == 'select-one') {
+                frmvalidator.addValidation("billing_state", "req", "Please enter/select your billing state");
+                frmvalidator.addValidation("billing_state", "maxlen=50");
+            }
+
+            frmvalidator.addValidation("billing_zip", "maxlen=15");
+            frmvalidator.addValidation("billing_zip", "req", "Please enter your billing zip code");
+
+            //<!--START: emailrequiredscript-->
+            frmvalidator.addValidation("billing_email", "maxlen=50", "Max length for Email is 50");
+            frmvalidator.addValidation("billing_email", "req", "Please enter your email address");
+            frmvalidator.addValidation("billing_email", "email");
+            //<!--END: emailrequiredscript-->
+
+            //
+
+            //
+
+            frmvalidator.addValidation("billing_country", "dontselect=0");
+
+            if (get_Element('sameAsBilling') != 'undefined' && get_Element('sameAsBilling') != null)
+                if (!document.billing.sameAsBilling.checked) {
+                    frmvalidator.addValidation("shipping_firstname", "req", "Please enter your shipping First Name");
+                    frmvalidator.addValidation("shipping_firstname", "maxlen=20", "Max length for shipping First Name is 20");
+
+                    frmvalidator.addValidation("shipping_lastname", "req", "Please enter your shipping Last Name");
+                    frmvalidator.addValidation("shipping_lastname", "maxlen=20", "Max length for shipping Last Name is 20");
+                    //<!--START: phonerequiredscript_shipping-->
+                    frmvalidator.addValidation("shipping_phone", "maxlen=18", "Max length for shipping Phone is 18");
+                    if (get_Element('shipping_country') != 'undefined' && get_Element('shipping_country') != null)
+                        if (get_Element('shipping_country').value == "US")
+                            frmvalidator.addValidation("shipping_phone", "phone", "Invalid phone number.");
+                    frmvalidator.addValidation("shipping_phone", "req", "Please enter your shipping phone"); //<!--END: phonerequiredscript_shipping-->
+                    frmvalidator.addValidation("shipping_address", "maxlen=50");
+                    frmvalidator.addValidation("shipping_address", "req", "Please enter your shipping address");
+
+                    frmvalidator.addValidation("shipping_city", "maxlen=50");
+                    frmvalidator.addValidation("shipping_city", "req", "Please enter your shipping city");
+
+                    if (get_Element('shipping_country').value == "US" || get_Element('shipping_state').type == 'select-one') {
+                        frmvalidator.addValidation("shipping_state", "req", "Please enter/select your shipping state");
+                        frmvalidator.addValidation("shipping_state", "maxlen=50");
+                    }
+
+                    frmvalidator.addValidation("shipping_zip", "maxlen=15");
+                    frmvalidator.addValidation("shipping_zip", "req", "Please enter your shipping zip code");
+
+                    frmvalidator.addValidation("shipping_country", "dontselect=0");
+                }
+
+        }
+    </script>
+
+    <script type="text/javascript">
+        //You should create the validator only after the definition of the HTML form
+        var frmvalidator = new Validator("billing");
+        frmvalidator.EnableMsgsTogether();
+
+        function confirmationValidation() {
+            if (get_Element("billing_email").value != get_Element("billing_confirmemail").value) {
+                alert('The Email does not match.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</div>

@@ -1,0 +1,165 @@
+﻿<div id="Contact" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li class="active">Contact Us</li>
+    </ul>
+    <h5>Contact Us</h5> 
+    <div class="col-md-12 md-padding">
+        <div class="row">
+            <form class="form-horizontal" novalidate role="form" name="ContactUs_Form" ng-submit="ContactUsForm()" data-ng-controller="ContactUsController">
+                <div class="form-group">
+                    <div class="col-sm-9 md-padding selectdemoOptionGroups">
+                        <div layout="row">
+                            <md-input-container style="margin-right: 10px;">                              
+                                <md-select required name="ContactUs_Deprtment" ng-model="ContactUs_Deprtment" placeholder="Select Country">
+                                    <md-option ng-repeat="ContactUs_Deprtment in Departments" value="{{ContactUs_Deprtment}}">{{ContactUs_Deprtment}}</md-option>
+                                </md-select>
+                                <div class="error-message" ng-show="ContactUs_Form.ContactUs_Deprtment.$invalid">
+                                    <small class="error" ng-show="ContactUs_Form.ContactUs_Deprtment.$error.required">
+                                        *
+                                    </small>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input id="name" placeholder="Name" name="ContactUs_Name" ng-model="ContactUs_Name" ng-minlength=5 ng-maxlength=20 required type="text" ng-pattern="" tabindex="2">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Name.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Name.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Name.$error.minlength">
+                                Name is required to be at laeast 5 characters..!!
+                            </small>
+
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Name.$error.maxlength">
+                                Name cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Name.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Name.$error.pattern">
+                                Not a valid Name.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ContactUs_Phone" name="ContactUs_Phone" type="text"  ng-maxlength=10 placeholder="Phone" required tabindex="3">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Phone.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Phone.$error.required">
+                                *
+                            </small>                          
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Phone.$error.maxlength">
+                                Phone cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Phone.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Phone.$error.pattern">
+                                Not a valid Phone.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ContactUs_Email" name="ContactUs_Email" type="email" placeholder="Email"  ng-maxlength=30 required tabindex="4">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Email.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Email.$error.required">
+                                *
+                            </small>                     
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Email.$error.maxlength">
+                                Email cannot be longer than 30 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Email.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Email.$error.pattern">
+                                Not a valid Email.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <label>Subject</label>
+                            <textarea ng-model="ContactUs_Subject" name="ContactUs_Subject" type="text"  ng-minlength=5 ng-maxlength=200 required tabindex="5"></textarea>
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Subject.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Subject.$error.required">
+                                *
+                            </small>
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Subject.$error.minlength">
+                                Subject is required to be at laeast 5 characters..!!
+                            </small>
+
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Subject.$error.maxlength">
+                                Subject cannot be longer than 200 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Subject.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Subject.$error.pattern">
+                                Not a valid Subject.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="captcha col-sm-offset-3 col-sm-9">
+                        <div id="recaptcha_image">
+                            <img src="../img/captcha.jpg" alt="">
+                        </div>
+                        <label class="control-label col-sm-6" for="subject">Type the word above...</label>
+                    </div>
+                    <div class="col-sm-9">
+                        <md-input-container>
+                            <input ng-model="ContactUs_Verification" name="ContactUs_Verification" type="text" placeholder="Verification" required tabindex="6">
+                        </md-input-container>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Verification.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Verification.$error.required">
+                                *
+                            </small>                           
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Verification.$error.maxlength">
+                                Verification cannot be longer than 20 characters.
+                            </small>
+                        </div>
+                        <div class="error-message" ng-show="ContactUs_Form.ContactUs_Verification.$invalid">
+                            <small class="error" ng-show="ContactUs_Form.ContactUs_Verification.$error.pattern">
+                                Not a valid Verification.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <md-button ng-disabled="ContactUs_Form.$invalid" type="submit" class="md-raised md-warn md-button md-ink-ripple">
+                            <!--ng-href="#/View/HomePage"-->
+                            <span class="ng-scope">Submit Request</span>
+                            <div class="md-ripple-container" style=""></div>
+                        </md-button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

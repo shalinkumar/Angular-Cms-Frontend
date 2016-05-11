@@ -1,0 +1,34 @@
+﻿<html>
+
+<head>
+
+    <!-- Angulars Material CSS using RawGit to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="https://rawgit.com/angular/bower-material/master/angular-material.css">
+</head>
+<body>
+
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using RawGit to load directly from `bower-material/master` -->
+    <script src="https://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+    <script src="JavaScript.js"></script>
+
+    <div ng-app="DemoApp" ng-controller="MainCtrl">
+        <div layout="column" layout-align="center center" style="margin: 0px 10px 0px 5px;">
+            <h1 class="nomargin">X</h1>
+            <p class="unit normagin">milimeter</p>
+        </div>
+
+        <div>
+            <md-select ng-model="motion.someVal0">
+          <md-option value="1">Move Absolute</md-option>
+          <md-option value="2">Move Relative</md-option>
+          <md-option value="3">Jog</md-option>
+        </md-select>
+        </div>
+    </div>
+</body>
+</html>
